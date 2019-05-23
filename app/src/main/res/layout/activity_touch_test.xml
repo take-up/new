@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.test.handler.MyHandlers" alias="hd"/>
+        <import type="java.util.List"/>
+        <variable
+            name="user"
+            type="com.test.bean.User"/>
+        <variable
+            name="handlers"
+            type="hd"/>
+        <!--<variable-->
+            <!--name="userList"-->
+            <!--type="List<User>"/>-->
+    </data>
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.test.TouchTestActivity">
+
+
+
+    <Button
+        android:id="@+id/btn_rxjava_map_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试rxjava2.x的map使用"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_rxjava_flatmap_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="测试rxjava2.x的flatmap使用"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_rxjava_interval_1_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="测试rxjava2.x的interval使用"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_rxjava_interval_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="测试rxjava2.x的interval使用实现倒计时"
+        android:onClick="onTestClick"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@{user.name}"
+        android:onClick="@{handlers::onClickFriend}"
+        android:visibility="@{user.adult ? View.VISIBLE : View.GONE}"
+        />
+    
+    <!--<TextView-->
+        <!--android:id="@+id/tv_test_list"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:text="@{((User)(user.connection)).lastName}"-->
+        <!--/>-->
+
+    <Button
+        android:id="@+id/btn_open_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="开启蓝牙"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_close_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="关闭蓝牙"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_passive_discovery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="被动搜索蓝牙设备"
+        android:onClick="onTestClick"
+        />
+
+    <Button
+        android:id="@+id/btn_active_discovery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="主动搜索蓝牙设备"
+        android:onClick="onTestClick"
+        />
+
+</LinearLayout>
+
+</layout>
